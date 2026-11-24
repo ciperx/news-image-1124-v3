@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World Daily — Tuesday 24 November 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+    height: 1024px;
+    overflow: hidden;
+    background: #f5f0e3;
+    color: #15130f;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 40px 10px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 0.86;
+    letter-spacing: -0.012em;
+    text-align: center;
+    white-space: nowrap;
+    color: #15130f;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .dateline {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #8c1a11;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .rule-double {
+    height: 9px;
+    margin: 5px 0 11px;
+    border-top: 4px solid #15130f;
+    border-bottom: 1.5px solid #15130f;
+    flex: 0 0 auto;
+  }
+  .rule-thin {
+    height: 0;
+    border-top: 2px solid #15130f;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  /* ---------- lead ---------- */
+  .lead { flex: 0 0 auto; }
+  .lead-head {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 86px;
+    line-height: 0.92;
+    letter-spacing: -0.022em;
+    margin: 0;
+    color: #15130f;
+  }
+  .deck {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: 0;
+    margin: 6px 0 0;
+    color: #3b352b;
+    white-space: nowrap;
+  }
+  .lead-cols {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 7px;
+  }
+  .lead-copy {
+    width: 494px;
+    flex: 0 0 494px;
+    align-self: center;
+    border-top: 3px solid #8c1a11;
+    padding-top: 12px;
+  }
+  .lead-copy p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.26;
+    margin: 0;
+    color: #221e18;
+  }
+  .lead-copy p::first-letter {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 82px;
+    line-height: 0.76;
+    float: left;
+    padding: 5px 7px 0 0;
+    color: #8c1a11;
+  }
+  .chart {
+    flex: 0 0 420px;
+    width: 420px;
+    height: 300px;
+    display: block;
+  }
+
+  /* ---------- secondaries ---------- */
+  .secondaries {
+    display: flex;
+    align-items: stretch;
+    margin-top: 11px;
+  }
+  .story {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .story + .story {
+    border-left: 1px solid #b3a98f;
+    padding-left: 26px;
+    margin-left: 26px;
+  }
+  .kicker {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: #8c1a11;
+    margin: 0;
+  }
+  .sub-head {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin: 5px 0 0;
+    color: #15130f;
+    white-space: nowrap;
+  }
+  .story p.subnote {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 1.22;
+    margin: 5px 0 0;
+    color: #221e18;
+    white-space: nowrap;
+  }
+
+  /* ---------- briefs ---------- */
+  .briefs { margin-top: 10px; }
+  .brief {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+    margin: 0;
+    white-space: nowrap;
+    color: #221e18;
+  }
+  .brief + .brief { margin-top: 3px; }
+  .brief .tag { color: #8c1a11; }
+
+  /* ---------- footer ---------- */
+  footer {
+    margin-top: auto;
+    flex: 0 0 auto;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #4a4437;
+    text-align: center;
+    white-space: nowrap;
+    border-top: 1px solid #b3a98f;
+    padding-top: 5px;
+  }
+
+  /* ---------- chart text ---------- */
+  .chart text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    fill: #15130f;
+  }
+  .chart .chart-title {
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 0.09em;
+    fill: #4a4437;
+  }
+  .chart .bar-label {
+    font-weight: 700;
+    font-size: 23px;
+  }
+  .chart .bar-value {
+    font-weight: 700;
+    font-size: 25px;
+    fill: #f5f0e3;
+  }
+  .chart .axis-label {
+    font-size: 20px;
+    fill: #4a4437;
+  }
+  .chart .chart-caption {
+    font-size: 20px;
+    font-style: italic;
+    fill: #4a4437;
+  }
+</style>
+</head>
+<body>
+
+  <h1 class="masthead">The World Daily</h1>
+  <div class="dateline">Tuesday 24 November 2026</div>
+  <div class="rule-double"></div>
+
+  <section class="lead">
+    <h2 class="lead-head">Chips Lead a<br>Broad Rally</h2>
+    <p class="deck">Jensen Huang's return sets off a chip surge.</p>
+
+    <div class="lead-cols">
+      <div class="lead-copy">
+        <p>Nvidia reinstated Jensen Huang, driving a chip rally. The S&amp;P 500 rose 1.8%, the Nasdaq 2.6%.</p>
+      </div>
+
+      <!-- Plot: 0 at x=130, 2.6% at x=330 => 76.923px per 1% -->
+      <svg class="chart" width="420" height="300" viewBox="0 0 420 300" role="img"
+           aria-label="One-day gain: S and P 500 up 1.8 percent, Nasdaq up 2.6 percent">
+        <text class="chart-title" x="0" y="20">ONE-DAY GAIN</text>
+
+        <!-- gridlines at 0, 1%, 2% -->
+        <line x1="130" y1="34" x2="130" y2="240" stroke="#a89e86" stroke-width="1"/>
+        <line x1="206.9" y1="34" x2="206.9" y2="240" stroke="#cfc6b0" stroke-width="1"/>
+        <line x1="283.8" y1="34" x2="283.8" y2="240" stroke="#cfc6b0" stroke-width="1"/>
+
+        <!-- S&P 500: 1.8% -> 138.5px -->
+        <text class="bar-label" x="122" y="88" text-anchor="end">S&amp;P 500</text>
+        <rect x="130" y="52" width="138.5" height="58" fill="#8c1a11"/>
+        <text class="bar-value" x="260" y="88" text-anchor="end">+1.8%</text>
+
+        <!-- Nasdaq: 2.6% -> 200px -->
+        <text class="bar-label" x="122" y="174" text-anchor="end">Nasdaq</text>
+        <rect x="130" y="138" width="200" height="58" fill="#15130f"/>
+        <text class="bar-value" x="322" y="174" text-anchor="end">+2.6%</text>
+
+        <!-- axis -->
+        <line x1="130" y1="240" x2="345" y2="240" stroke="#15130f" stroke-width="2"/>
+        <text class="axis-label" x="130" y="264" text-anchor="middle">0</text>
+        <text class="axis-label" x="206.9" y="264" text-anchor="middle">1%</text>
+        <text class="axis-label" x="283.8" y="264" text-anchor="middle">2%</text>
+
+        <text class="chart-caption" x="0" y="294">Close, 23 Nov 2026</text>
+      </svg>
+    </div>
+  </section>
+
+  <div class="rule-thin" style="margin-top:12px"></div>
+
+  <section class="secondaries">
+    <div class="story">
+      <p class="kicker">AFRICA</p>
+      <h3 class="sub-head">Russian Warship<br>Sinks at Benghazi</h3>
+      <p class="subnote">Corvette Merkury sank off Libya.</p>
+    </div>
+    <div class="story">
+      <p class="kicker">ASIA</p>
+      <h3 class="sub-head">ICJ: Rohingya<br>Genocide Ruling</h3>
+      <p class="subnote">The court ruled in The Hague.</p>
+    </div>
+  </section>
+
+  <div class="rule-thin" style="margin-top:12px"></div>
+
+  <section class="briefs">
+    <p class="brief"><span class="tag">CLIMATE —</span> Summit ends with no text; Pacific aid lost.</p>
+    <p class="brief"><span class="tag">MIDDLE EAST —</span> Trump may hit Iran; Eisenkot: no threat.</p>
+  </section>
+
+  <footer>The World Daily · Tuesday 24 November 2026 · page one</footer>
+
+</body>
+</html>
